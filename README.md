@@ -85,7 +85,7 @@ The **Classification Agent** is an autonomous entity built on GPT-4o-mini.
 3. **API Thresholding**: The sample size is limited by GitHub Search API's 1000-result cap per query, though mitigated through city-based stratification.
 
 ## Section 10: Author Information
-- **Name**: [Your Name]
-*   **Course**: Prompt Engineering - Assignment 2
+- **Name**: Estefanía Apaza
+*   **Course**: Prompt Engineering
 *   **Date**: March 2026
 *   **Video Link**: [Found in demo/video_link.md](demo/video_link.md)
