@@ -4,7 +4,7 @@ import plotly.express as px
 import os
 import json
 
-st.set_page_config(page_title="GitHub Peru Analytics", page_icon="🇵🇪", layout="wide")
+st.set_page_config(page_title="GitHub Peru Analytics", layout="wide")
 
 # Custom CSS for premium look
 st.markdown("""
@@ -40,13 +40,8 @@ def load_all_data():
 
 users_df, repos_df, classifications_df, user_metrics_df, eco_metrics = load_all_data()
 
-st.title("Peru Developer Ecosystem")
-st.markdown("""
-### Strategic Overview & Performance Insights
-Welcome to the **GitHub Peru Analytics** dashboard. This application provides a comprehensive analysis of the 
-software development landscape in Peru, utilizing data extracted from the GitHub API and processed through 
-AI-driven industrial classification (GPT-4) and advanced technical metrics.
-""")
+st.title("Ecosystem Overview")
+st.markdown("### Strategic Performance Insights")
 
 if eco_metrics:
     col1, col2, col3, col4 = st.columns(4)

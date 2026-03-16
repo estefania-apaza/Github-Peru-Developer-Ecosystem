@@ -1,68 +1,91 @@
-# 🇵🇪 GitHub Peru Analytics: Developer Ecosystem Dashboard
+# GitHub Peru Analytics: Developer Ecosystem Dashboard
 
-> Analyzing the Peruvian developer landscape through data engineering and AI.
+Analyzing the Peruvian developer landscape through data engineering and AI.
 
-### 🐣 The Antigravity Easter Egg
-Before anything else, we follow the Python tradition:
+## Section 1: Project Title and Description
+**GitHub Peru Analytics** is a comprehensive data engineering and AI project focused on mapping the software development ecosystem in Peru. By leveraging the GitHub API, we analyzed over 500 developers and 1,200 repositories to understand technological trends, industry focus, and community impact.
+
+### Antigravity Easter Egg
+Following the Python tradition of exploration:
 ![Antigravity Screenshot](demo/antigravity_screenshot.png)
 
-## 🚀 Key Findings
-Based on the analysis of **503 Peruvian developers** and **1,200 repositories**:
-1. **Language Landscape**: **JavaScript** remains the king of the ecosystem (16.4%), with **TypeScript** (15.5%) showing rapid professional adoption.
-2. **Industry Dominance**: As expected, **Information and Communication** (58%) is the primary industry, but **Education** (12.6%) and **Arts/Recreation** (8%) show significant open-source contributions.
-3. **Maturity**: The average Peruvian developer account in this dataset is **9 years old** (~3,284 days), indicating a deeply experienced core community.
-4. **Community Value**: The ecosystem has amassed over **68,000 stars**, reflecting high external recognition for local projects.
-5. **Impact Hub**: Lima dominates the geographic distribution, acting as the primary hub for the country's technical innovation.
+## Section 2: Key Findings
+Based on our analysis of the Peruvian ecosystem:
+1. **Language Landscape**: JavaScript (16.4%) and TypeScript (15.5%) dominate the professional landscape.
+2. **Industry Focus**: 58% of projects are centered on Information and Communication, with Education (12.6%) as the second most active sector.
+3. **Professional Maturity**: The average developer in this dataset has a 9-year-old GitHub account, indicating a mature core community.
+4. **Community recognition**: Local projects have amassed over 68,000 stars cumulative.
+5. **Geographic Centralization**: Lima remains the primary hub for technical innovation and open-source contribution in the country.
 
-## 📊 Data Collection
-- **Sample Size**: 503 Users, 1,200 Repositories.
-- **Source**: GitHub Search API (Location: Peru, Lima, Arequipa, etc.).
-- **Rate Limiting**: Implemented using `tenacity` with exponential backoff and `GitHubClient` to monitor `X-RateLimit-Remaining` headers.
-- **Full Context**: READMEs were extracted for all 1,200 repositories to nourish the AI Classification Agent.
+## Section 3: Data Collection
+- **Users and Repositories**: 503 unique users and 1,200 active repositories collected.
+- **Time Period**: Data reflects the state of the ecosystem as of March 2026.
+- **Rate Limiting**: Managed via exponential backoff using the `tenacity` library and a custom `GitHubClient` that monitors X-RateLimit headers to prevent API blocking.
 
-## ✨ Dashboard Features
-1. **Main Dashboard**: Real-time ecosystem KPIs (Total Devs, Repos, Stars) and Growth Timeline.
-2. **Developer Explorer**: Filterable table with 20+ metrics (h-index, impact score, consistency) and CSV Export.
-3. **Repository Browser**: Industry-specific filtering and "Stars vs Forks" correlation analysis.
-4. **Industry Analytics**: Deep dive into CIIU categorization and language distribution per sector.
-5. **Language Analytics**: Heatmaps correlating technical stacks with industry focus.
-6. **AI Agent Transparency**: Details on how the autonomous categorization was performed.
+## Section 4: Features
+- **Overview Dashboard**: High-level KPIs and ecosystem growth timeline.
+- **Developer Explorer**: Advanced filtering of users by 20+ specialized metrics.
+- **Repository Browser**: Search and filtering by industry classification and traction.
+- **Industry Analysis**: Structural distribution using CIIU standards and Industry-Language heatmaps.
+- **Language Analytics**: Deep dive into the technical stack market share.
+- **AI Agent Transparency**: Public documentation of the autonomous classification reasoning.
 
-## ⚙️ Installation & Usage
-1. **Clone & Setup**:
+### Page Screenshots
+![Overview](demo/screenshots/overview.png)
+![Developers](demo/screenshots/developers.png)
+![Repositories](demo/screenshots/repositories.png)
+![Industries](demo/screenshots/industries.png)
+
+## Section 5: Installation
+1. **Clone the repository**:
    ```bash
-   git clone <repo-url>
+   git clone https://github.com/estefania-apaza/Github-Peru-Developer-Ecosystem.git
+   cd Github-Peru-Developer-Ecosystem
+   ```
+2. **Install dependencies**:
+   ```bash
    pip install -r requirements.txt
    ```
-2. **Configuration**: Create a `.env` file from the example:
+3. **Environment Setup**: Create a `.env` file in the root directory:
+   - **GitHub Token**: Generate a Personal Access Token (PAT) at GitHub Settings > Developer Settings.
+   - **OpenAI Key**: Obtain an API key from the OpenAI Dashboard.
    ```env
-   GITHUB_TOKEN=your_token
-   OPENAI_API_KEY=your_key
-   ```
-3. **Run Pipeline**:
-   ```bash
-   python scripts/extract_data.py
-   python scripts/classify_repos.py
-   python scripts/calculate_metrics.py
-   ```
-4. **Launch Application**:
-   ```bash
-   streamlit run app/main.py
+   GITHUB_TOKEN=your_pat_here
+   OPENAI_API_KEY=your_key_here
    ```
 
-## 🧠 AI Agent Documentation
-We implemented a **Classification Agent** using OpenAI's Function Calling (`gpt-4o-mini`).
-- **Autonomy**: The agent decides whether it needs more context (README) before finalizing a classification.
-- **Tools**: `get_readme`, `get_languages`, `classify_industry`.
-- **Reasoning**: Every classification includes a `reasoning` field documenting the agent's logic.
+## Section 6: Usage
+1. **Extraction**: Run `python scripts/extract_data.py` to fetch raw user and repo data.
+2. **Classification**: Run `python scripts/classify_repos.py` to start the AI Agent processing.
+3. **Metrics**: Run `python scripts/calculate_metrics.py` to generate the dashboard JSON/CSV files.
+4. **Dashboard**: Launch the UI with `streamlit run app/main.py`.
 
-## ⚠️ Limitations
-1. **Location Bias**: Only users with explicit location "Peru" or major cities in their profile were captured.
-2. **Stars Threshold**: Data collection favors historically popular repositories, potentially missing emerging trends.
-3. **Classification Accuracy**: While GPT-4 is highly accurate, some generic libraries ("Utils", "Template") may default to Information/Communication industry.
+## Section 7: Metrics Documentation
+### User-Level Metrics
+- **impact_score**: A weighted composite of stars, followers, and repository count.
+- **h_index_repos**: Measures both the productivity and citation impact (stars) of a developer.
+- **contribution_consistency**: Percentage of repositories with activity in the last 12 months.
+- **account_age_days**: Total duration since the account was created.
+- **avg_stars_per_repo**: Mean stars across all public repositories.
 
-## 👤 Author Information
+### Ecosystem Metrics
+- **active_developer_pct**: Ratio of developers with recent pushes to the total sample.
+- **language_diversity_index**: Measures the variety of programming languages used across the country.
+- **avg_repos_per_user**: Average number of public projects per developer.
+
+## Section 8: AI Agent Documentation
+The **Classification Agent** is an autonomous entity built on GPT-4o-mini.
+- **Architecture**: Loop-based reasoning using Function Calling.
+- **Tools**: `get_readme` (retrieves full documentation for context), `get_languages` (technical breakdown), `classify_industry` (maps to CIIU).
+- **Decision Logic**: The agent evaluates metadata and determines if deeper context is required before committing to an industrial category.
+
+## Section 9: Limitations
+1. **Location Bias**: Restricted to users with public location metadata set to "Peru" or its major cities.
+2. **Classification Defaults**: Generic tooling or library projects may be over-represented in the "Information and Communication" category due to lack of specific business application in metadata.
+3. **API Thresholding**: The sample size is limited by GitHub Search API's 1000-result cap per query, though mitigated through city-based stratification.
+
+## Section 10: Author Information
 - **Name**: [Your Name]
-- **Course**: Prompt Engineering - Assignment 2
-- **Date**: March 2026
-- **Video Link**: [Found in demo/video_link.md](demo/video_link.md)
+*   **Course**: Prompt Engineering - Assignment 2
+*   **Date**: March 2026
+*   **Video Link**: [Found in demo/video_link.md](demo/video_link.md)
