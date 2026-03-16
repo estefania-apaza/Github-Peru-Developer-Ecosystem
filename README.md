@@ -33,7 +33,6 @@ Based on our analysis of the Peruvian ecosystem:
 ### Page Screenshots
 ![Overview](demo/screenshots/overview.png)
 ![Developers](demo/screenshots/developers.png)
-![Repositories](demo/screenshots/repositories.png)
 ![Industries](demo/screenshots/industries.png)
 
 ## Section 5: Installation
