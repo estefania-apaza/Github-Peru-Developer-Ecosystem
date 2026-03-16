@@ -54,11 +54,18 @@ Based on our analysis of the Peruvian ecosystem:
    OPENAI_API_KEY=your_key_here
    ```
 
+> [!TIP]
+> **Streamlit Cloud Deployment**: If you forgot to add secrets during deployment, go to your app dashboard, click **Manage App** -> **Settings** -> **Secrets** and paste the keys in TOML format:
+> ```toml
+> GITHUB_TOKEN = "your_token"
+> OPENAI_API_KEY = "your_key"
+> ```
+
 ## Section 6: Usage
 1. **Extraction**: Run `python scripts/extract_data.py` to fetch raw user and repo data.
 2. **Classification**: Run `python scripts/classify_repos.py` to start the AI Agent processing.
 3. **Metrics**: Run `python scripts/calculate_metrics.py` to generate the dashboard JSON/CSV files.
-4. **Dashboard**: Launch the UI with `streamlit run app/main.py`.
+4. **Dashboard**: Launch the UI with `streamlit run app/Overview.py`.
 
 ## Section 7: Metrics Documentation
 ### User-Level Metrics
