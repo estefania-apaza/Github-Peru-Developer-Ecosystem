@@ -1,0 +1,116 @@
+{
+  "total_developers": 503,
+  "total_repositories": 1200,
+  "total_stars": 68729,
+  "avg_repos_per_user": 2.3856858846918487,
+  "most_popular_languages": [
+    {
+      "language": "JavaScript",
+      "count": 197
+    },
+    {
+      "language": "TypeScript",
+      "count": 187
+    },
+    {
+      "language": "Python",
+      "count": 139
+    },
+    {
+      "language": "HTML",
+      "count": 74
+    },
+    {
+      "language": "Jupyter Notebook",
+      "count": 60
+    },
+    {
+      "language": "CSS",
+      "count": 57
+    },
+    {
+      "language": "Java",
+      "count": 52
+    },
+    {
+      "language": "C#",
+      "count": 46
+    },
+    {
+      "language": "Kotlin",
+      "count": 32
+    },
+    {
+      "language": "R",
+      "count": 30
+    }
+  ],
+  "industry_distribution": [
+    {
+      "industry": "Information and communication",
+      "count": 707
+    },
+    {
+      "industry": "Education",
+      "count": 152
+    },
+    {
+      "industry": "Arts, entertainment and recreation",
+      "count": 97
+    },
+    {
+      "industry": "Professional, scientific activities",
+      "count": 92
+    },
+    {
+      "industry": "Financial and insurance activities",
+      "count": 43
+    },
+    {
+      "industry": "Wholesale and retail trade",
+      "count": 31
+    },
+    {
+      "industry": "Human health and social work",
+      "count": 21
+    },
+    {
+      "industry": "Accommodation and food services",
+      "count": 12
+    },
+    {
+      "industry": "Water supply; sewerage",
+      "count": 11
+    },
+    {
+      "industry": "Transportation and storage",
+      "count": 10
+    },
+    {
+      "industry": "Agriculture, forestry and fishing",
+      "count": 8
+    },
+    {
+      "industry": "Manufacturing",
+      "count": 4
+    },
+    {
+      "industry": "Public administration and defense",
+      "count": 4
+    },
+    {
+      "industry": "Administrative and support activities",
+      "count": 4
+    },
+    {
+      "industry": "Real estate activities",
+      "count": 3
+    },
+    {
+      "industry": "Construction",
+      "count": 1
+    }
+  ],
+  "active_developer_pct": 10.536779324055665,
+  "avg_account_age_days": 3284.5109343936383
+}
